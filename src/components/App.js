@@ -4,24 +4,41 @@ import MultiButton from "./MultiButton";
 import ChangeItUp from "./ChangeItUp";
 import Login from "./Login";
 
+function Clickable({ onClick }) {
+// function Clickable() {
+  // function handleClick() {
+  //   console.log("click");
+  // }
+  // return <button onClick={handleClick}>Click Me</button>;
+  return <button onClick={onClick}>Click Me</button>;
+}
+
 function App() {
+  function handleClick() {
+    console.log("click");
+  }
+  
   return (
-    <div>
-      <h3>onClick</h3>
-      <Tickler />
-      <hr />
+    <>
+      {/* <Clickable /> */}
+      <Clickable onClick={handleClick} />
+      <div>
+        <h3>onClick</h3>
+        <Tickler />
+        <hr />
 
-      <MultiButton />
-      <hr />
+        <MultiButton />
+        <hr />
 
-      <h3>onChange</h3>
-      <ChangeItUp />
-      <hr />
+        <h3>onChange</h3>
+        <ChangeItUp />
+        <hr />
 
-      <h3>onSubmit</h3>
-      <Login />
-      <hr />
-    </div>
+        <h3>onSubmit</h3>
+        <Login />
+        <hr />
+      </div>
+    </>
   );
 }
 
